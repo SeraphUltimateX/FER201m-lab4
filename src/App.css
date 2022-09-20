@@ -79,6 +79,7 @@ li:has(> a.active) {
 
 .column {
   flex-basis: 33.33333%;
+  overflow: auto;
   border-style: solid;
   border-color: #373c3e;
   border-width: 5px 2vw 5px 2vw;

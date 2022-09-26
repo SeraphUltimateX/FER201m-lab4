@@ -5,11 +5,11 @@ export class Main extends Component {
     constructor() {
         super();
         this.state = {
-            listOfFilms: ListOfFilms        
+            listOfFilms: ListOfFilms
         };
     }
     render() {
-        return <FilmsPresentation listOfFilms={this.state.listOfFilms}/>
+        return <FilmsPresentation listOfFilms={this.state.listOfFilms} />
     }
 }
 export default Main

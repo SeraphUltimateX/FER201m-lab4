@@ -3,11 +3,11 @@
 }
 
 nav {
-  background-color: #d27013;
+  background-color: #000000;
 }
 
 nav a {
-  color: #ffffff;
+  color: inherit;
   text-decoration: none;
 }
 
@@ -27,13 +27,13 @@ li {
 }
 
 li:has(> a.active) {
-  background-color: #6e7cf4;
+  background-color: #91830b;
 }
 
 footer {
-  color: #000000;
+  color: #ffffff;
   text-align: center;
-  background-color: #6e7cf4;
+  background-color: #000000;
   padding: 8px 0 8px 0;
 }
 
@@ -83,11 +83,18 @@ footer {
   flex-direction: column;
 }
 
-.info h2 {
-  flex-basis: 5%;
-  font-size: min(1.5em, 1.5vw);
-  margin-block-end: 1.4em;
+.info .title {
+  height: 12%;
+  margin-block: 1.4em;
   margin-inline: 0.5em;
+
+  display: flex;
+  align-items: center;
+}
+
+.info .title h2 {
+  font-size: min(1.5em, 1.5vw);
+  margin: 0 auto;
 }
 
 .detail {
@@ -100,7 +107,7 @@ footer {
 .year {
   margin: 3px 0 3px 0;
   opacity: 0.8;
-  background-color: #6e7cf4;
+  background-color: #91830b;
 }
 
 .nation {
@@ -118,12 +125,12 @@ footer {
 .showPopup button {
   cursor: pointer;
   color: #000000;
-  background-color: #6e7cf4;
+  background-color: #91830b;
   width: 100%;
   font-size: 1.2em;
   border-style: outset;
   border-width: 1.5px;
-  border-color: #6e7cf4 ;
+  border-color: #ffffff;
 }
 
 @media only screen and (max-width: 991px) {
@@ -144,18 +151,21 @@ footer {
     bottom: 0;
     right: 0;
     width: 35%;
-    background-color: #ffffffb6;
+    background-color: rgba(255, 255, 255, 0.7);
     opacity: 0.5;
   }
 
-  .column .info:hover{
+  .column .info:hover {
     opacity: 1;
   }
 
-  .column .info h2 {
-    flex-basis: 5%;
-    font-size: min(1.5em, 5vw);
+  .column .info .title {
+    height: 12%;
     margin-block-end: 0.83em;
+  }
+
+  .column .info .title h2 {
+    font-size: min(1.5em, 5vw);
   }
 
   .column .detail {
@@ -180,7 +190,7 @@ footer {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #000000b3;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .popupContent {
@@ -218,8 +228,11 @@ footer {
   width: 100%;
 }
 
-.popupContent .info h2 {
+.popupContent .info .title {
   margin-block-start: 3em;
+}
+
+.popupContent .info .title h2 {
   font-size: min(1.8em, 1.8vw);
 }
 
@@ -249,8 +262,11 @@ footer {
     background-color: #ffffffb3;
   }
 
-  .popupContent .info h2 {
+  .popupContent .info .title {
     margin-block: 0.5em;
+  }
+
+  .popupContent .info .title h2 {
     font-size: 1.6em;
   }
 
@@ -263,6 +279,7 @@ footer {
   }
 
 }
+
 /*### Popup_END ###*/
 
 /*### ThemeSwitch_START ###*/
@@ -274,17 +291,10 @@ nav {
   cursor: pointer;
 
   position: absolute;
+  top: 0;
   bottom: 0;
   right: 5vw;
   padding: 15px 0 15px 0;
-}
-
-nav a {
-  color: inherit;
-}
-
-nav a.active {
-  color: #ffffff;
 }
 
 @media only screen and (max-width: 991px) {
@@ -297,4 +307,5 @@ nav a.active {
     width: 100%;
   }
 }
+
 /*### ThemeSwitch_END ###*/

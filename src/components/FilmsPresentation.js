@@ -16,7 +16,7 @@ export default function FilmsPresentation({ listOfFilms }) {
     const { theme } = useContext(ThemeContext)
     const [curFilm, setCurFilm] = useState([])
     return (
-        <div className="container" style={{ backgroundColor: theme.backdropBackgroundColor, color: theme.textColor }}>
+        <div className="container" style={{ backgroundColor: theme.backdropBackgroundColor, color: theme.contentTextColor }}>
             {
                 listOfFilms.map((film) => (
                     <div className="column" key={film.id}>
@@ -28,20 +28,22 @@ export default function FilmsPresentation({ listOfFilms }) {
                                 style={
                                     largeScreen
                                         ?
-                                        { backgroundColor: theme.mutedBackgroundColor, color: theme.textColor }
+                                        { backgroundColor: theme.mutedBackgroundColor, color: theme.contentTextColor }
                                         :
-                                        { backgroundColor: theme.seethroughBackgroundColor, color: theme.textColor }
+                                        { backgroundColor: theme.seethroughBackgroundColor, color: theme.contentTextColor }
                                 }>
-                                <h2>{film.Title}</h2>
+                                <div className="title">
+                                    <h2>{film.Title}</h2>
+                                </div>
                                 <div className="detail">
-                                    <p className="year" style={{ backgroundColor: theme.focusedBackgroundColor, color: theme.textColor }}>{film.Year}</p>
+                                    <p className="year" style={{ backgroundColor: theme.focusedBackgroundColor, color: theme.focusedTextColor }}>{film.Year}</p>
                                     <p className="nation">{film.Nation}</p>
                                     <p className="showPopup">
                                         <button onClick={() => {
                                             setCurFilm(film);
                                             const popup = document.getElementById("popupContainer1");
                                             popup.style.display = "block";
-                                        }} style={{ backgroundColor: theme.focusedBackgroundColor, color: theme.textColor }}>
+                                        }} style={{ backgroundColor: theme.focusedBackgroundColor, color: theme.focusedTextColor }}>
                                             Detail
                                         </button>
                                     </p>
@@ -64,17 +66,19 @@ export default function FilmsPresentation({ listOfFilms }) {
                         <div className="poster">
                             <img src={curFilm.Image} alt="" />
                         </div>
-                        <div className="info" 
+                        <div className="info"
                             style={
                                 largeScreen
-                                ?
-                                { backgroundColor: theme.mutedBackgroundColor, color: theme.textColor }
-                                :
-                                { backgroundColor: theme.overlayBackgroundColor, color: theme.textColor }
+                                    ?
+                                    { backgroundColor: theme.mutedBackgroundColor, color: theme.contentTextColor }
+                                    :
+                                    { backgroundColor: theme.overlayBackgroundColor, color: theme.contentTextColor }
                             }>
-                            <h2>{curFilm.Title}</h2>
+                            <div className="title">
+                                <h2>{curFilm.Title}</h2>
+                            </div>
                             <div className="detail">
-                                <p className="year" style={{ backgroundColor: theme.focusedBackgroundColor, color: theme.textColor }}>{curFilm.Year}</p>
+                                <p className="year" style={{ backgroundColor: theme.focusedBackgroundColor, color: theme.focusedTextColor }}>{curFilm.Year}</p>
                                 <p className="nation">{curFilm.Nation}</p>
                                 <p className="sypnosis">{curFilm.Sypnosis}</p>
                             </div>

@@ -4,9 +4,9 @@ export default function Navigation() {
     const { dark, theme, toggle } = useContext(ThemeContext)
     return (
         <div style={{ position: "relative" }}>
-            <nav style={{ backgroundColor: theme.primaryBackgroundColor, color: theme.textColor }}>
+            <nav style={{ backgroundColor: theme.primaryBackgroundColor, color: theme.contentTextColor }}>
                 <ul>
-                    <li style={{ backgroundColor: theme.focusedBackgroundColor }}><a className="active" href="#home">Home</a></li>
+                    <li style={{ backgroundColor: theme.focusedBackgroundColor, color: theme.focusedTextColor }}><a className="active" href="#home">Home</a></li>
                     <li><a href="#news">News</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -17,7 +17,7 @@ export default function Navigation() {
                 <span className="switch-mode" onClick={toggle}
                     style={{
                         backgroundColor: theme.primaryBackgroundColor,
-                        color: theme.textColor,
+                        color: theme.contentTextColor,
                         outline: "none"
                     }} data-testid="toggle-theme-btn">
                     Switch Nav to {dark ? "Light" : "Dark"} Mode

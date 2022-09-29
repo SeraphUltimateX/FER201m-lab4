@@ -11,16 +11,13 @@ function ThemeProvider({ children }) {
         setDark(isDark)
     }, [dark])
 
-    const [mode, setMode] = useState(dark ? "Theatre Mode" : "Normal Mode");
-    const useModeTitle = (m) => {
+    const useModeTitle = () => {
         useEffect(() => {
-            if (localStorage.getItem("mode")) {
-                m = localStorage.getItem("mode")
-            }
-            document.title = "Film Showcase - " + m
+            let mode = dark ? "Theatre Mode" : "Normal Mode";
+            document.title = "Film Showcase - " + mode
         })
     }
-    useModeTitle(mode)
+    useModeTitle()
 
     const theme = dark ? themes.dark : themes.light
 
@@ -28,10 +25,6 @@ function ThemeProvider({ children }) {
         const isDark = !dark
         localStorage.setItem("dark", JSON.stringify(isDark))
         setDark(isDark)
-
-        const curMode = isDark ? "Theatre Mode" : "Normal Mode"
-        localStorage.setItem("mode", curMode)
-        setMode(curMode)
     }
 
     return (

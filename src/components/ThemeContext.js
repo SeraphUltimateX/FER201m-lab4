@@ -12,9 +12,12 @@ function ThemeProvider({ children }) {
     }, [dark])
 
     const [mode, setMode] = useState(dark ? "Theatre Mode" : "Normal Mode");
-    const useModeTitle = (s) => {
+    const useModeTitle = (m) => {
         useEffect(() => {
-            document.title = "Film Showcase - " + localStorage.getItem("mode")
+            if (localStorage.getItem("mode")) {
+                m = localStorage.getItem("mode")
+            }
+            document.title = "Film Showcase - " + m
         })
     }
     useModeTitle(mode)

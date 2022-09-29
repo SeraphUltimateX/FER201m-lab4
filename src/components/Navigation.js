@@ -19,7 +19,7 @@ export default function Navigation() {
                         backgroundColor: theme.primaryBackgroundColor,
                         color: theme.textColor,
                         outline: "none"
-                    }} data-testid="toggle=theme-btn">
+                    }} data-testid="toggle-theme-btn">
                     Switch Nav to {dark ? "Light" : "Dark"} Mode
                 </span>
             </div>

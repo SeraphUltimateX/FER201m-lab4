@@ -171,7 +171,7 @@ footer {
 
 /*### MainContent_END ###*/
 
-/*###Popup###*/
+/*### Popup_START ###*/
 .overlay {
   display: none;
   z-index: 1;
@@ -263,8 +263,9 @@ footer {
   }
 
 }
+/*### Popup_END ###*/
 
-/*###ThemeSwitch###*/
+/*### ThemeSwitch_START ###*/
 nav {
   display: flex;
 }
@@ -296,3 +297,4 @@ nav a.active {
     width: 100%;
   }
 }
+/*### ThemeSwitch_END ###*/

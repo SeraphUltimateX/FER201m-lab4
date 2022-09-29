@@ -5,10 +5,9 @@ export default function FilmsPresentation({ listOfFilms }) {
     // console.log(listOfFilms);
 
     const useLargeScreenSize = () => {
-        const [largeScreen, setLargeScreen] = useState(false)
+        let largeScreen = window.matchMedia("(min-width: 992px)").matches
         useEffect(() => {
             console.log("Screen is large: " + window.matchMedia("(min-width: 992px)").matches)
-            setLargeScreen(window.matchMedia("(min-width: 992px)").matches)
         })
         return largeScreen
     }

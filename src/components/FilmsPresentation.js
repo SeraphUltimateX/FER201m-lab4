@@ -1,20 +1,15 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, /*useEffect, useState*/ } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { ThemeContext } from "./ThemeContext";
+import { LargeScreenContext } from "./LargeScreenContext";
 
 export default function FilmsPresentation({ listOfFilms }) {
     // console.log(listOfFilms);
 
-    const useLargeScreenSize = () => {
-        let largeScreen = window.matchMedia("(min-width: 992px)").matches
-        useEffect(() => {
-            console.log("Screen is large: " + window.matchMedia("(min-width: 992px)").matches)
-        })
-        return largeScreen
-    }
-    const largeScreen = useLargeScreenSize()
-
+    const largeScreen = useContext(LargeScreenContext)
     const { theme } = useContext(ThemeContext)
-    const [curFilm, setCurFilm] = useState([])
+    const navigate = useNavigate();
+    // const [curFilm, setCurFilm] = useState([])
     return (
         <div className="container" style={{ backgroundColor: theme.backdropBackgroundColor, color: theme.contentTextColor }}>
             {
@@ -39,13 +34,17 @@ export default function FilmsPresentation({ listOfFilms }) {
                                     <p className="year" style={{ backgroundColor: theme.focusedBackgroundColor, color: theme.focusedTextColor }}>{film.Year}</p>
                                     <p className="nation">{film.Nation}</p>
                                     <p className="showPopup">
-                                        <button onClick={() => {
-                                            setCurFilm(film);
-                                            const popup = document.getElementById("popupContainer1");
-                                            popup.style.display = "block";
-                                        }} style={{ backgroundColor: theme.focusedBackgroundColor, color: theme.focusedTextColor }}>
+                                        {/* <Link to={`/details/${film.id}`}> */}
+                                        <button onClick={() => navigate(`/details/${film.id}`)
+                                            // {   
+                                            //     setCurFilm(film);
+                                            //     const popup = document.getElementById("popupContainer1");
+                                            //     popup.style.display = "block";
+                                            // }
+                                        } style={{ backgroundColor: theme.focusedBackgroundColor, color: theme.focusedTextColor }}>
                                             Detail
                                         </button>
+                                        {/* </Link> */}
                                     </p>
                                 </div>
                             </div>
@@ -54,7 +53,7 @@ export default function FilmsPresentation({ listOfFilms }) {
                 ))
             }
 
-            <div id="popupContainer1" className="overlay">
+            {/* <div id="popupContainer1" className="overlay">
                 <div className="popupContent">
                     <span className="close" onClick={() => {
                         const popup = document.getElementById("popupContainer1");
@@ -94,7 +93,7 @@ export default function FilmsPresentation({ listOfFilms }) {
                         popup.style.display = "none";
                     }
                 }
-            }
+            } */}
         </div>
     );
 }

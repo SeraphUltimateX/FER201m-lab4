@@ -11,13 +11,13 @@ function ThemeProvider({ children }) {
         setDark(isDark)
     }, [dark])
 
-    const useModeTitle = () => {
+    // const useModeTitle = () => {
         useEffect(() => {
             let mode = dark ? "Theatre Mode" : "Normal Mode";
             document.title = "Film Showcase - " + mode
         })
-    }
-    useModeTitle()
+    // }
+    // useModeTitle()
 
     const theme = dark ? themes.dark : themes.light
 

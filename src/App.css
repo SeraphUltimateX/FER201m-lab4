@@ -61,6 +61,12 @@ footer {
   border-width: 2px;
   border-style: outset;
   border-color: #949494;
+  border-radius: 10px;
+}
+
+.column {
+  /* --box-shadow-color: rgb(55, 0, 255); */
+  box-shadow: 0 0 8px 1px var(--box-shadow-color);
 }
 
 .card {

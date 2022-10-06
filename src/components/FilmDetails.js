@@ -7,7 +7,7 @@ export default function FilmDetails() {
     let params = useParams()
     // console.log(params.id)
     // eslint-disable-next-line
-    let film = ListOfFilms.find((f) => { return f.id == params.id })
+    let film = ListOfFilms.find((e) => { return e.id == params.id })
     console.log(film)
 
     const largeScreen = useContext(LargeScreenContext)

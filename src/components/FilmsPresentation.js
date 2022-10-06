@@ -1,5 +1,5 @@
 import { useContext, /*useEffect, useState*/ } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { /*Link,*/ useNavigate } from "react-router-dom";
 import { ThemeContext } from "./ThemeContext";
 import { LargeScreenContext } from "./LargeScreenContext";
 
@@ -11,7 +11,7 @@ export default function FilmsPresentation({ listOfFilms }) {
     const navigate = useNavigate();
     // const [curFilm, setCurFilm] = useState([])
     return (
-        <div className="container" style={{ backgroundColor: theme.backdropBackgroundColor, color: theme.contentTextColor }}>
+        <div id="home" className="container" style={{ backgroundColor: theme.backdropBackgroundColor, color: theme.contentTextColor }}>
             {
                 listOfFilms.map((film) => (
                     <div className="column" key={film.id}>

@@ -12,7 +12,7 @@ function Contact() {
                         backgroundPosition: "center", backgroundRepeat: "no-repeat"
                     }} />
                 </div>
-                <p id="contact-1-info">Somewhere@Nowhere.net</p>
+                <p id="contact-1-info">Home@Nowhere.net</p>
             </div>
 
             <div id="contact-2" className="column" style={{ backgroundColor: theme.mutedBackgroundColor, color: theme.contentTextColor }}>
@@ -27,16 +27,18 @@ function Contact() {
 
             <div id="contact-3" className="column" style={{ backgroundColor: theme.mutedBackgroundColor, color: theme.contentTextColor }}>
                 <div id="contact-3-bg" style={{ backgroundColor: theme.mutedBackgroundColor, color: theme.contentTextColor }}>
-                        < a href="https://twitter.com" id="contact-3-bgimg" style={{
-                            backgroundImage: `url("/assets/icons/twitter.png")`, backgroundSize: "contain",
-                            backgroundPosition: "center", backgroundRepeat: "no-repeat"
-                        }} />
+                    < a href="https://twitter.com" target="_blank" rel="noreferrer" id="contact-3-bgimg" style={{
+                        backgroundImage: `url("/assets/icons/twitter.png")`, backgroundSize: "contain",
+                        backgroundPosition: "center", backgroundRepeat: "no-repeat"
+                    }} >
+                        <p style={{ position: "absolute", visibility: "hidden" }}>Twitter</p>
+                        </a>
                 </div>
                 {/* <p id="contact-3-info"></p> */}
             </div>
 
             <div id="contact-4" className="column" style={{ backgroundColor: theme.mutedBackgroundColor, color: theme.contentTextColor }}>
-            <div id="contact-4-bg" style={{ backgroundColor: theme.mutedBackgroundColor, color: theme.contentTextColor }}>
+                <div id="contact-4-bg" style={{ backgroundColor: theme.mutedBackgroundColor, color: theme.contentTextColor }}>
                     < div id="contact-4-bgimg" style={{
                         backgroundImage: `url("/assets/icons/pin.png")`, backgroundSize: "contain",
                         backgroundPosition: "center", backgroundRepeat: "no-repeat"

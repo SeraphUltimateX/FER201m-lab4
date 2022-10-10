@@ -364,14 +364,23 @@ nav {
 
   @keyframes slideInFromBottom {
     from {
-      line-height: 0;
-      opacity: 0;
+      /* display: none; */
+      /* opacity: 0; */
+      /* line-height: 0; */
+      /* bottom: -100%; */
+      
+      transform: scaleY(0);
+      transform-origin: bottom;
     }
 
     to {
+      /* display: block;   */
+      /* opacity: 0.35;   */
+      /* line-height: 1.315; */ 
       /* bottom: 0; */
-      line-height: 1.315; /*~= normal*/
-      opacity: 0.35;
+      
+      transform: scaleY(1);
+      transform-origin: bottom;
     }
   }
 }

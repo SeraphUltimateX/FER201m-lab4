@@ -1,0 +1,62 @@
+.tabs {
+    background-color: var(--primary-bg-color);
+}
+
+.tabs .indicator {
+    background-color: var(--focused-bg-color);
+}
+
+.tabs .tab a {
+    color: var(--focused-text-color);
+    opacity: 0.7;
+}
+
+.tabs .tab a:hover,
+.tabs .tab a.active {
+    color: var(--focused-bg-color);
+    opacity: 1;
+}
+
+.tabs .tab a:focus,
+.tabs .tab a:focus.active {
+    background-color: var(--muted-bg-color);
+}
+
+
+/*###*/
+
+#news .section {
+    height: 100%;
+}
+
+#news .card-content {
+    height: 130px;
+}
+
+#news .card-title {
+    overflow: hidden;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+#news .card-content .news-content {
+    overflow: hidden;
+    padding-inline: 0.4em;
+    padding-block: 5px;
+    line-height: 24px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+}
+
+#news .card-action {
+    background-color: var(--backdrop-bg-color) !important;
+    color: var(--focused-bg-color) !important;
+}

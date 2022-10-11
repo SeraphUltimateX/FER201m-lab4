@@ -1,0 +1,195 @@
+/*### FilmDetails_START ###*/
+
+#film-details .poster {
+  width: 100%;
+}
+
+#film-details .info .meta-info {
+  display: flex;
+}
+
+#film-details .collection.cast .collection-item.avatar {
+  text-align: left;
+}
+
+#film-details .collection.cast .collection-item.avatar .title {
+  display: initial;
+  height: auto;
+  margin: 0;
+  font-size: inherit !important;
+}
+
+#film-details .info .year,
+#film-details .info .nation {
+  width: 50%;
+  font-size: 1.6rem;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#film-details .info .cast {
+  font-size: 1.35rem;
+}
+
+#film-details .info .sypnosis {
+  font-size: 1.2em;
+  margin-top: 1em;
+  padding-inline: 0.8em;
+  text-align: center;
+}
+
+@media screen and (max-width: 991px) {
+  #film-details .info {
+    padding-bottom: 1.5em;
+
+    animation: slideInFromBottom 1.2s;
+  }
+
+  @keyframes slideInFromBottom {
+    from {
+      transform: scaleY(0);
+      transform-origin: bottom;
+    }
+
+    to {
+      transform: scaleY(1);
+      transform-origin: bottom;
+    }
+  }
+}
+
+
+@media screen and (min-width: 992px) {
+  #film-details .info .title h2 {
+    font-size: 2rem;
+  }
+
+  #film-details .info .year,
+  #film-details .info .nation {
+    font-size: 1.3rem;
+  }
+
+  #film-details .info .sypnosis {
+    margin-top: 2em;
+  }
+
+  #film-details .info .cast {
+    font-size: min(1.35rem, 1.2vw);
+  }
+
+  #film-details .info .sypnosis {
+    font-size: min(1.2rem, 1vw);
+  }
+
+  @keyframes slideInFromLeft {
+    from {
+      left: -20vw;
+    }
+
+    to {
+      left: 0;
+    }
+  }
+}
+
+/*### FilmDetails_END ###*/
+
+/*### Popup_START ###*/
+/* .overlay {
+  display: none;
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.popupContent {
+  margin: 5vh auto;
+  //padding: 2.5px;
+  background: #b9b9b9;
+  width: 45%;
+  max-height: 100%;
+  position: relative;
+  //transition: all 2s ease-in-out;
+}
+
+.popupContent .close {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333333;
+}
+
+.popupContent .close:hover {
+  color: #b80707;
+}
+
+.popupContent .card {
+  border: 2.5px solid;
+  border-radius: 5px;
+}
+
+.popupContent .poster img {
+  width: 100%;
+}
+
+.popupContent .info .title {
+  margin-block-start: 3em;
+}
+
+.popupContent .info .title h2 {
+  font-size: min(1.8em, 1.8vw);
+}
+
+.popupContent .detail .sypnosis {
+  font-size: min(1em, 1vw);
+}
+
+.popupContent .sypnosis {
+  text-align: left;
+  margin-inline: 0.8em 0.4em;
+}
+
+@media only screen and (max-width: 991px) {
+  .popupContent {
+    //padding: 2vh 0;
+    width: 90%;
+  }
+
+  .popupContent .card {
+    grid-template-columns: auto;
+  }
+
+  .popupContent .info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffffffb3;
+  }
+
+  .popupContent .info .title {
+    margin-block: 0.5em;
+  }
+
+  .popupContent .info .title h2 {
+    font-size: 1.6em;
+  }
+
+  .popupContent .detail {
+    font-size: 1.2em;
+  }
+
+  .popupContent .detail .sypnosis {
+    font-size: min(1em, 4vw);
+  }
+} */
+
+/*### Popup_END ###*/

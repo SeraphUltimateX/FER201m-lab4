@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react"
 import { themes } from "../shared/Themes"
-import { useThemeVariables } from "./ThemeContextHelper"
+import { setThemeVariables } from "./ThemeContextHelper"
 
 const ThemeContext = createContext()
 
@@ -15,7 +15,7 @@ function ThemeProvider({ children }) {
     // const useModeTitle = () => {
     useEffect(() => {
         let mode = dark ? "Theatre Mode" : "Normal Mode";
-        document.title = "Film Showcase - " + mode
+        document.title = "Horizon Movies - " + mode
     })
     // }
     // useModeTitle()
@@ -28,7 +28,7 @@ function ThemeProvider({ children }) {
         setDark(isDark)
     }
 
-    useThemeVariables(theme)
+    setThemeVariables(theme)
 
     return (
         <ThemeContext.Provider value={{ dark, theme, toggle }}>

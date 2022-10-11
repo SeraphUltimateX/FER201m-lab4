@@ -1,0 +1,97 @@
+/*### NavigationHeader_START ###*/
+nav {
+  background-color: #000000;
+}
+
+/*### NavigationHeader_END ###*/
+
+/*### ThemeSwitch_START ###*/
+nav {
+  display: flex;
+}
+
+nav li a {
+  font-size: 1.2rem !important;
+}
+
+@media only screen and (max-width: 991px) {
+  .nav-wrapper {
+    position: static !important;
+  }
+
+  nav .brand-logo {
+    position: absolute !important;
+    width: max-content !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+}
+
+
+
+@media only screen and (min-width: 992px) {
+  nav li {
+    padding: 0 0.8vw !important;
+  }
+
+  /* li:first-child {
+    padding-left: 0 !important;
+  } */
+
+  nav .brand-logo {
+    right: var(--brand-logo-position) !important;
+    transform: translate(100%);
+  }
+}
+
+.switch:has(.btn-toggle-theme) {
+  cursor: pointer;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 5vw;
+  padding: 15px 0;
+
+  display: inline-flex;
+  align-items: center;
+}
+
+.switch label {
+  font-size: 1em;
+  color: var(--nav-text-color);
+}
+
+/*Inactive lever track*/
+.switch label .lever {
+  background-color: #e8e8e8;
+}
+
+/*Inactive lever knob on hover*/
+input[type=checkbox]:not(:disabled)~.lever:active:before,
+input[type=checkbox]:not(:disabled).tabbed:focus~.lever::before {
+  background-color: rgb(185, 136, 90, 0.7);
+}
+
+/*Inactive lever knob*/
+.switch label .lever:after {
+  background-color: #d16e12;
+}
+
+/*Active lever track*/
+.switch label input[type=checkbox]:checked+.lever {
+  background-color: rgb(75, 75, 75);
+}
+
+/*Active lever knob on hover*/
+.switch label input[type=checkbox]:checked+.lever:before,
+.switch label input[type=checkbox]:checked+.lever:after {
+  background-color: rgba(167, 155, 66, 0.7);
+}
+
+/*Active lever knob*/
+.switch label input[type=checkbox]:checked+.lever:after {
+  background-color: #91830b;
+}
+
+/*### ThemeSwitch_END ###*/

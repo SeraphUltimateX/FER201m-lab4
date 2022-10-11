@@ -1,47 +1,41 @@
 import React, { useContext } from "react"
+import { NavLink, Link } from "react-router-dom"
+import { Navbar, Icon, Switch } from 'react-materialize'
+
 import { ThemeContext } from "./ThemeContext"
-import { NavLink } from "react-router-dom"
+import { LargeScreenContext } from "./LargeScreenContext";
+import './Navigation.css'
 export default function Navigation() {
     const { dark, theme, toggle } = useContext(ThemeContext)
-    let navLinkStyle = {
-        textAlign: "center",
-        padding: "15px 3px 15px 3px",
-        width: "25%",
-        listStyleType: "none",
-        fontSize: "1.2em"
-    }
+    const largeScreen = useContext(LargeScreenContext)
     let activeStyle = {
         backgroundColor: theme.focusedBackgroundColor,
         color: theme.focusedTextColor,
-        textAlign: "center",
-        padding: "15px 3px 15px 3px",
-        width: "25%",
-        listStyleType: "none",
-        fontSize: "1.2em"
     }
 
     return (
         <div style={{ position: "relative" }}>
-            <nav style={{ backgroundColor: theme.primaryBackgroundColor, color: theme.contentTextColor }}>
-                <ul>
-                    {/* <li style={{ backgroundColor: theme.focusedBackgroundColor, color: theme.focusedTextColor }}><a className="active" href="#home">Home</a></li> */}
-                    <NavLink to="/" end style={({ isActive }) => isActive ? activeStyle : navLinkStyle}><li>Home</li></NavLink>
-                    <NavLink to="/news" style={({ isActive }) => isActive ? activeStyle : navLinkStyle}><li>News</li></NavLink>
-                    <NavLink to="/about" style={({ isActive }) => isActive ? activeStyle : navLinkStyle}><li>About</li></NavLink>
-                    <NavLink to="/contact" style={({ isActive }) => isActive ? activeStyle : navLinkStyle}><li>Contact</li></NavLink>
-                </ul>
-            </nav>
-
-            <div>
-                <span className="switch-mode" onClick={toggle}
-                    style={{
-                        backgroundColor: theme.primaryBackgroundColor,
-                        color: theme.contentTextColor,
-                        outline: "none"
-                    }} data-testid="toggle-theme-btn">
-                    Switch to {dark ? "Light" : "Dark"} Mode
-                </span>
-            </div>
+            <Navbar
+                alignLinks="left"
+                brand={<Link to="/"><span style={{ fontFamily: 'Merienda', fontWeight: 'lighter' }}>Horizon Movies</span></Link>}
+                menuIcon={<Icon>menu</Icon>}
+                options={{
+                    preventScrolling: true
+                }}
+                style={{ backgroundColor: theme.primaryBackgroundColor, color: theme.contentTextColor }}
+            >
+                <NavLink to="/" end style={({ isActive }) => isActive ? activeStyle : {}}><Icon left>home</Icon>Home</NavLink>
+                <NavLink to="/news" style={({ isActive }) => isActive ? activeStyle : {}}><Icon left>info_outline</Icon>News</NavLink>
+                <NavLink to="/about" style={({ isActive }) => isActive ? activeStyle : {}}><Icon left>dvr</Icon>About</NavLink>
+                <NavLink to="/contact" style={({ isActive }) => isActive ? activeStyle : {}}><Icon left>contacts</Icon>Contact</NavLink>
+            </Navbar>
+            <Switch
+                className="btn-toggle-theme"
+                offLabel={largeScreen ? 'Light Mode' : ''}
+                onLabel={largeScreen ? 'Dark Mode' : ''}
+                checked={dark}
+                onChange={toggle}
+            />
         </div>
     )
 }

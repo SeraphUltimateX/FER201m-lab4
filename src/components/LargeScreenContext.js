@@ -1,4 +1,5 @@
 import { createContext, useEffect, useReducer } from "react"
+import { setLargeScreenVariables } from "./LargeSreenContextHelper"
 
 var LargeScreenContext = createContext(true)
 
@@ -13,6 +14,7 @@ function LargeScreenProvider({ children }) {
         // console.log("LargeScreenReducer: state=" + a)
         // console.log("LargeScreenReducer: action=" + b)
         console.log("Screen is large: " + window.matchMedia("(min-width: 992px)").matches)
+        setLargeScreenVariables()
         return window.matchMedia("(min-width: 992px)").matches
     }
     const [largeScreen, doLargeScreen] = useReducer(handleResize, true)
@@ -24,6 +26,7 @@ function LargeScreenProvider({ children }) {
     })
     // }
     // useLargeScreenSize()
+
 
     return (
         <LargeScreenContext.Provider value={largeScreen}>

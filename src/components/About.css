@@ -1,0 +1,10 @@
+.collapsible-header,
+.keyboard-focused .collapsible-header:focus {
+    background-color: var(--primary-bg-color);
+    color: var(--content-text-color);
+}
+
+.collapsible-body {
+    background-color: var(--backdrop-bg-color);
+    color: var(--content-text-color);
+}

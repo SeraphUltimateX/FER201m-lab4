@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { ThemeContext } from "./ThemeContext";
-import { Icon, CardTitle, Row, Col, Card, Container, Section, Button, Collapsible, CollapsibleItem, Slider, Slide, Caption } from 'react-materialize'
+import { Icon, Container, Section, Collapsible, CollapsibleItem, Slider, Slide, Caption } from 'react-materialize'
 
 import './About.css'
 export default function About() {

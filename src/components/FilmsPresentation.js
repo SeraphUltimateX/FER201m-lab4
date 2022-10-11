@@ -1,18 +1,17 @@
 import { useContext, /*useEffect, useState*/ } from "react";
 import { useNavigate } from "react-router-dom";
-import { /*Icon, CardTitle,*/ Row, Col, Card, Container, Section } from 'react-materialize'
+import { /*Icon, CardTitle,*/ Row, Col, Card, Container, Section, MediaBox } from 'react-materialize'
 
 import './FilmsPresentation.css'
 import { ThemeContext } from "./ThemeContext";
-import { LargeScreenContext } from "./LargeScreenContext";
+// import { LargeScreenContext } from "./LargeScreenContext";
 
 export default function FilmsPresentation({ listOfFilms }) {
     // console.log(listOfFilms);
 
-    const largeScreen = useContext(LargeScreenContext)
     const { theme } = useContext(ThemeContext)
+    // const largeScreen = useContext(LargeScreenContext)
     const navigate = useNavigate();
-    // const [curFilm, setCurFilm] = useState([])
 
     const perRow = 3;
     let rows = []
@@ -27,7 +26,23 @@ export default function FilmsPresentation({ listOfFilms }) {
                                 horizontal
                                 header={
                                     <div className="poster">
-                                        <img src={film.Image} alt="" />
+                                        <MediaBox
+                                            id="MediaBox_9"
+                                            options={{
+                                                inDuration: 275,
+                                                onCloseEnd: null,
+                                                onCloseStart: null,
+                                                onOpenEnd: null,
+                                                onOpenStart: null,
+                                                outDuration: 200
+                                            }}
+                                        >
+                                            <img
+                                                alt=""
+                                                src={film.Image}
+                                                width="650"
+                                            />
+                                        </MediaBox>
                                     </div>}
                             >
                                 <div className="info"
@@ -46,12 +61,10 @@ export default function FilmsPresentation({ listOfFilms }) {
                                         <p className="year" style={{ backgroundColor: theme.focusedBackgroundColor, color: theme.focusedTextColor }}>{film.Year}</p>
                                         <p className="nation">{film.Nation}</p>
                                         <p className="btn-more-detail">
-                                            {/* <Link to={`/details/${film.id}`}> */}
                                             <button onClick={() => navigate(`/details/${film.id}`)
                                             } style={{ backgroundColor: theme.focusedBackgroundColor, color: theme.focusedTextColor }}>
                                                 Detail
                                             </button>
-                                            {/* </Link> */}
                                         </p>
                                     </div>
                                 </div>

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Icon, CardTitle, Row, Col, Card, Container, Section, Button, Collection, CollectionItem } from 'react-materialize'
+import { Icon, CardTitle, Card, Container, Section, Button, Collection, CollectionItem } from 'react-materialize'
 import './FilmDetails.css'
 
 import { ListOfFilms } from "../shared/ListOfFilms";
@@ -39,7 +39,6 @@ export default function FilmDetails() {
             </Icon>
         </CollectionItem>
     ))
-    let actor = film.Cast[1]
 
     return (
         <div style={{ backgroundColor: theme.backdropBackgroundColor, color: theme.contentTextColor }}>
@@ -103,52 +102,4 @@ export default function FilmDetails() {
             </Container >
         </div >
     )
-
-
-    return (
-        <Button
-            className="red"
-            icon={<Icon>ondemand_video</Icon>}
-            floating
-            large
-            waves="light"
-            node="button"
-            onClick={() => { setIsOpen(true) }}
-        />
-    );
-
-    return (
-        <div id="film-details" className="container" style={{ backgroundColor: theme.backdropBackgroundColor, color: theme.contentTextColor }}>
-            <div className="column" key={film.id}>
-                <div className="card">
-
-                    <div className="info-overlay" style={{ backgroundColor: theme.seethroughBackgroundColor }}>
-                        <div className="info" style={
-                            largeScreen
-                                ?
-                                { color: theme.contentTextColor }
-                                :
-                                { backgroundColor: theme.overlayBackgroundColor, color: theme.contentTextColor }
-                        }>
-                            <div className="title">
-                                <h2>{film.Title}</h2>
-                            </div>
-                            <div className="detail">
-                                <div className="meta-info">
-                                    <p className="year" style={{ backgroundColor: theme.focusedBackgroundColor, color: theme.focusedTextColor }}>{film.Year}</p>
-                                    <p className="nation" style={{ backgroundColor: theme.focusedBackgroundColor, color: theme.focusedTextColor }}>{film.Nation}</p>
-                                </div>
-                                <p className="sypnosis">{film.Sypnosis}</p>
-                                <div className="cast"><i>Starring:</i> {film.Cast.join(", ")}</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="poster">
-                        <img src={`/${film.Image}`} alt="" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
 }

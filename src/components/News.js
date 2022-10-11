@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { Icon, CardTitle, Row, Col, Card, Container, Section, Button, Collection, CollectionItem, Tabs, Tab } from 'react-materialize'
+import { CardTitle, Row, Col, Card, Container, Section, Tabs, Tab } from 'react-materialize'
 
 import './News.css'
 import { ThemeContext } from "./ThemeContext";
@@ -45,7 +45,7 @@ export default function News() {
     return (
         <div style={{ backgroundColor: theme.backdropBackgroundColor, color: theme.contentTextColor }}>
             <Container id='news' >
-                <Section 
+                <Section
                     className="z-depth-4"
                     style={{ /*backgroundColor: theme.mutedBackgroundColor, */color: theme.contentTextColor }}
                 >
